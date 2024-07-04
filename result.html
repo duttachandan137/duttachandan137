@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allocation Results</title>
+</head>
+<body>
+    <h1>Allocation Results</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Group ID</th>
+                <th>Hostel Name</th>
+                <th>Room Number</th>
+                <th>Members Allocated</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for allocation in allocation_data %}
+            <tr>
+                <td>{{ allocation['Group ID'] }}</td>
+                <td>{{ allocation['Hostel Name'] }}</td>
+                <td>{{ allocation['Room Number'] }}</td>
+                <td>{{ allocation['Members Allocated'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/download/{{ filename }}" download>Download Allocation Details (CSV)</a>
+</body>
+</html>
